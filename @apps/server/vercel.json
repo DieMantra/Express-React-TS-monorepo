@@ -9,7 +9,7 @@
 	"routes": [
 		{
 			"src": "/(.*)",
-			"dest": "https://express-react-ts-monorepo.vercel.app/$1"
+			"dest": "https://express-react-ts-monorepo.vercel.app/"
 		}
 	],
 	"build": {

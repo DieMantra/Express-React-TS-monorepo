@@ -27,6 +27,10 @@ export type Context = inferAsyncReturnType<typeof createContext>;
 const app = express();
 app.use(cors());
 
+app.use('/', (req, res) => {
+	return res.send('hello world');
+});
+
 app.use(
 	'/api',
 	createExpressMiddleware({
