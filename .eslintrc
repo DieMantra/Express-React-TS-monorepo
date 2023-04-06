@@ -50,7 +50,11 @@
 		"ecmaFeatures": {
 			"jsx": true
 		},
-		"project": ["./@apps/client/tsconfig.json", "./@apps/server/tsconfig.json"]
+		"project": [
+			"./@apps/client/tsconfig.json",
+			"./@apps/server/tsconfig.json",
+			"tsconfig.base.json"
+		]
 	},
 	"root": true,
 	"plugins": ["react", "@typescript-eslint", "simple-import-sort"],

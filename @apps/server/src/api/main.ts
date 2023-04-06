@@ -3,7 +3,7 @@ import * as trpcExpress from '@trpc/server/adapters/express';
 import cors from 'cors';
 import express from 'express';
 
-import { appRouter } from './router/index';
+import { appRouter } from '../router/index';
 
 // created for each request
 
@@ -25,7 +25,7 @@ const app = express();
 app.use(cors());
 
 app.use(
-	'/trpc',
+	'/api',
 	trpcExpress.createExpressMiddleware({
 		router: appRouter,
 		createContext,
@@ -33,5 +33,5 @@ app.use(
 );
 
 app.listen(3000, () => {
-	console.log('listening on port 3000');
+	console.log('trpc listening on port 3000');
 });

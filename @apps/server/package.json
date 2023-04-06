@@ -5,7 +5,7 @@
 	"type": "module",
 	"main": "src/index.ts",
 	"scripts": {
-		"dev": "tsx watch src/main.ts",
+		"dev": "tsx watch src/api/main.ts",
 		"build": "tsc && pnpx prisma migrate dev",
 		"deploy:production": "tsc && pnpx prisma migrate deploy",
 		"prisma:studio": "npx prisma studio",

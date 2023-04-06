@@ -1,12 +1,18 @@
-// @filename: client.ts
 import { createTRPCProxyClient, httpBatchLink } from '@trpc/client';
 import type { AppRouter } from 'express-server';
+// Notice the <AppRouter> generic here
 
-// Notice the <AppRouter> generic here.
+const url = import.meta.env.DEV
+	? import.meta.env.VITE_DEV_API_URL
+	: process.env.PROD_API_URL || '';
+
 const trpc = createTRPCProxyClient<AppRouter>({
 	links: [
 		httpBatchLink({
-			url: 'http://localhost:3000/trpc',
+			url,
+			headers: {
+				'Cache-Control': 's-max-age=1, stale-while-revalidate',
+			},
 		}),
 	],
 });
