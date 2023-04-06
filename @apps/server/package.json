@@ -4,9 +4,6 @@
 	"description": "Express + Typecript",
 	"type": "module",
 	"main": "src/RouterExports.ts",
-	"engines": {
-		"node": ">=16.1.0"
-	},
 	"scripts": {
 		"dev": "tsx watch src/index.ts",
 		"build": "rollup -c && pnpx prisma migrate dev",
