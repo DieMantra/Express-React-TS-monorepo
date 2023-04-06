@@ -4,6 +4,9 @@
 	"description": "Vite + Redux + Sass + React + Express + Typescript + Prisma + Postgres + tRPC",
 	"private": true,
 	"type": "module",
+	"engines": {
+		"node": ">=16.1.0"
+	},
 	"scripts": {
 		"@client": "pnpm --filter react-client",
 		"@server": "pnpm --filter express-server",
