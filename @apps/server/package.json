@@ -4,10 +4,13 @@
 	"description": "Express + Typecript",
 	"type": "module",
 	"main": "src/index.ts",
+	"engines": {
+		"node": ">=16.13.0"
+	},
 	"scripts": {
 		"dev": "tsx watch src/api/main.ts",
 		"build": "tsc && pnpx prisma migrate dev",
-		"deploy:production": "tsc && pnpx prisma migrate deploy",
+		"deploy:production": "tsc && pnpx prisma migrate deploy && node dist/api/main.js",
 		"prisma:studio": "npx prisma studio",
 		"prisma:generate": "npx prisma generate",
 		"prisma:migrate": "npx prisma migrate dev"
