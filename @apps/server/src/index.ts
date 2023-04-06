@@ -35,6 +35,8 @@ app.use(
 	})
 );
 
-app.listen(3000, () => {
-	console.log('trpc listening on port 3000');
-});
+export default app;
+
+// app.listen(3000, () => {
+// 	console.log('trpc listening on port 3000');
+// });
