@@ -9,7 +9,7 @@
 	"routes": [
 		{
 			"src": "/(.*)",
-			"dest": "dist/index.cjs"
+			"dest": "@apps/server/dist/index.cjs"
 		}
 	]
 }
