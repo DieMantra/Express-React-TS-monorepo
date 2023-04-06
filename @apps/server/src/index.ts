@@ -35,6 +35,15 @@ app.use(
 	})
 );
 
+app.get('/tyson', (req, res) => {
+	return res.send({
+		name: 'Tyson',
+		DOB: '1995-29-03',
+		lastName: req.query.lastName,
+	});
+});
+// http://localhost:3000/tyson?lastName=filia
+
 export default app;
 
 app.listen(3000, () => {
