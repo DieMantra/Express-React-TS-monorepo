@@ -6,5 +6,7 @@
 			"use": "@vercel/node"
 		}
 	],
-	"rewrites": [{ "source": "/(.*)", "destination": "/dist-api/index.cjs" }]
+	"rewrites": [{ "source": "/(.*)", "destination": "/dist-api/index.cjs" }],
+
+	"buildCommand": "pnpm run deploy:production"
 }
