@@ -12,5 +12,5 @@
 			"dest": "/dist/index.js"
 		}
 	],
-	"rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
+	"rewrites": [{ "source": "/(.*)", "destination": "/dist/index.js" }]
 }
