@@ -8,6 +8,8 @@ import express from 'express';
 
 import { appRouter } from './router/appRouter';
 
+const port = 3000;
+
 // created for each request
 
 interface CreateContextReturnType {
@@ -27,10 +29,6 @@ export type Context = inferAsyncReturnType<typeof createContext>;
 const app = express();
 app.use(cors());
 
-// app.use('/', (req, res) => {
-// 	return res.send('hello world');
-// });
-
 app.use(
 	'/api',
 	createExpressMiddleware({
@@ -41,8 +39,8 @@ app.use(
 
 app.use('/tyson', (req, res) => {
 	return res.send({
-		name: 'Tyson',
-		DOB: '1995-29-03',
+		name: 'blah',
+		DOB: '1dasfasf3',
 		lastName: req.query.lastName,
 	});
 });
@@ -50,6 +48,6 @@ app.use('/tyson', (req, res) => {
 
 export default app;
 
-app.listen(3000, () => {
+app.listen(port, () => {
 	console.log('trpc listening on port 3000');
 });
