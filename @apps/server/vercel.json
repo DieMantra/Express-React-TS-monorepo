@@ -2,9 +2,9 @@
 	"version": 2,
 	"builds": [
 		{
-			"src": "api/index.cjs",
+			"src": "dist-api/index.cjs",
 			"use": "@vercel/node"
 		}
 	],
-	"rewrites": [{ "source": "/(.*)", "destination": "/api/index.cjs" }]
+	"rewrites": [{ "source": "/(.*)", "destination": "/dist-api/index.cjs" }]
 }

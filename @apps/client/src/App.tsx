@@ -6,6 +6,7 @@ import trpc from './app/lib/trpc';
 
 const App: FC = () => {
 	const { toggleTheme, isDark, theme } = useTheme();
+
 	const testTRPC = async (): Promise<void> => {
 		const data = await trpc.todos.getUser.query('the input');
 		console.log(data);

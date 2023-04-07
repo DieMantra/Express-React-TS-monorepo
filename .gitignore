@@ -10,12 +10,13 @@ lerna-debug.log*
 @apps/client/node_modules
 @apps/client/dist
 @apps/server/node_modules
-# @apps/server/dist
+@apps/server/dist-api
 data
 
 
 node_modules
-# dist
+dist
+dist-api
 dist-ssr
 *.local
 

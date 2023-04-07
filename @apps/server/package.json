@@ -7,8 +7,8 @@
 	"scripts": {
 		"dev": "tsx watch src/index.ts",
 		"build": "rollup -c && pnpx prisma migrate dev",
-		"rollup": "rm -rf ./api && rollup -c",
-		"deploy:production": "rollup -c && pnpx prisma migrate deploy && node ./dist/index.cjs",
+		"rollup": "rm -rf ./dist-api && rollup -c",
+		"deploy:production": "rollup -c && pnpx prisma migrate deploy",
 		"prisma:studio": "pnpx prisma studio",
 		"prisma:generate": "pnpx prisma generate",
 		"prisma:migrate": "pnpx prisma migrate dev"
