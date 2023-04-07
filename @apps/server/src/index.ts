@@ -27,9 +27,9 @@ export type Context = inferAsyncReturnType<typeof createContext>;
 const app = express();
 app.use(cors());
 
-app.use('/', (req, res) => {
-	return res.send('hello world');
-});
+// app.use('/', (req, res) => {
+// 	return res.send('hello world');
+// });
 
 app.use(
 	'/api',
@@ -39,7 +39,7 @@ app.use(
 	})
 );
 
-app.get('/tyson', (req, res) => {
+app.use('/tyson', (req, res) => {
 	return res.send({
 		name: 'Tyson',
 		DOB: '1995-29-03',
