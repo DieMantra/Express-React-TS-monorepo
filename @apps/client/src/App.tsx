@@ -41,6 +41,7 @@ const App: FC = () => {
 			</button>
 			<button onClick={testTRPC}>Trigger trpc</button>
 			<h1>Counter</h1>
+			<h2>Just a test</h2>
 		</div>
 	);
 };
