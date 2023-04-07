@@ -1,11 +1,5 @@
 {
 	"version": 2,
-	"builds": [
-		{
-			"src": "dist-api/index.cjs",
-			"use": "@vercel/node"
-		}
-	],
 	"rewrites": [{ "source": "/(.*)", "destination": "/dist-api/index.cjs" }],
 	"buildCommand": "pnpm run deploy:production",
 	"outputDirectory": "./dist-api"
