@@ -50,6 +50,6 @@ app.get('/tyson', (req, res) => {
 
 export default app;
 
-// app.listen(3000, () => {
-// 	console.log('trpc listening on port 3000');
-// });
+app.listen(3000, () => {
+	console.log('trpc listening on port 3000');
+});
