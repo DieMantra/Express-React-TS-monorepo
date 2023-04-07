@@ -1,14 +1,15 @@
 import { useTheme } from 'mantra-theme-switcher';
-import type { FC } from 'react';
+import { FC, useState } from 'react';
 
 import styles from './App.module.scss';
 import trpc from './app/lib/trpc';
 
 const App: FC = () => {
 	const { toggleTheme, isDark, theme } = useTheme();
+	const [inputTRPC, setInputTRPC] = useState('');
 
 	const testTRPC = async (): Promise<void> => {
-		const data = await trpc.todos.getUser.query('the input');
+		const data = await trpc.todos.getUser.query(inputTRPC);
 		console.log(data);
 	};
 
@@ -17,6 +18,12 @@ const App: FC = () => {
 			<h2>
 				{isDark ? 'dark' : 'light'} here: {theme}
 			</h2>
+			<input
+				className={styles.trpcInput}
+				type='text'
+				onChange={(e): void => setInputTRPC(e.target.value)}
+				value={inputTRPC}
+			/>
 			<button
 				className={styles.button}
 				onClick={(): void => toggleTheme('dark')}

@@ -7,7 +7,6 @@ import type { AppRouter } from 'express-server';
 // 	: process.env.PROD_API_URL || '';
 
 const url = import.meta.env.VITE_PROD_API_URL;
-console.log(import.meta.env.VITE_PROD_API_URL);
 const trpc = createTRPCProxyClient<AppRouter>({
 	links: [
 		httpBatchLink({
