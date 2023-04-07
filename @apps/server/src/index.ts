@@ -31,13 +31,13 @@ app.use(cors());
 // 	return res.send('hello world');
 // });
 
-// app.use(
-// 	'/api',
-// 	createExpressMiddleware({
-// 		router: appRouter,
-// 		createContext,
-// 	})
-// );
+app.use(
+	'/api',
+	createExpressMiddleware({
+		router: appRouter,
+		createContext,
+	})
+);
 
 app.use('/tyson', (req, res) => {
 	return res.send({
