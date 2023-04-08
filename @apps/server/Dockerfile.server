@@ -1,16 +1,18 @@
 FROM node:16-alpine
 
+RUN npm install -g pnpm
+
+WORKDIR /app
 
 COPY package.json ./
 COPY pnpm-lock.yaml ./
 COPY pnpm-workspace.yaml ./
 
-RUN npm install -g pnpm
 RUN pnpm install
 
 COPY . .
 
-WORKDIR /app
+WORKDIR /app/@apps/server
 
 COPY package.json ./
 COPY pnpm-lock.yaml ./
@@ -22,4 +24,3 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["pnpm", "dev"]

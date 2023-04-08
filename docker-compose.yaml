@@ -4,26 +4,30 @@ services:
   client:
     container_name: react-client
     build:
-      context: ./@apps/client
-      dockerfile: Dockerfile.client
+      context: .
+      dockerfile: ./@apps/client/Dockerfile.client
     volumes:
       - .:/app
+      - '/app/@apps/client/node_modules'
     ports:
       - '5173:5173'
     depends_on:
       - server
+    stdin_open: true
 
   server:
     container_name: express-server
     build:
-      context: ./@apps/server
-      dockerfile: Dockerfile.server
+      context: .
+      dockerfile: ./@apps/server/Dockerfile.server
     volumes:
       - .:/app
+      - '/app/@apps/server/node_modules'
     ports:
       - '3000:3000'
     depends_on:
       - db
+    stdin_open: true
 
   db:
     image: mysql:latest
