@@ -9,7 +9,7 @@ const App: FC = () => {
 	const [inputTRPC, setInputTRPC] = useState('');
 
 	const testTRPC = async (): Promise<void> => {
-		const data = await trpc.todos.getUser.query(inputTRPC);
+		const data = await trpc.todos.getAllTodos.query({ userId: 2 });
 		console.log(data);
 	};
 
